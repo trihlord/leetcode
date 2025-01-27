@@ -1,0 +1,3 @@
+[workspace]
+members = ["climbing_stairs"]
+resolver = "1"
