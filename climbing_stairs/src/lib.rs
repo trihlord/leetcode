@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 /// # [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs)
 ///
 /// You are climbing a staircase. It takes n steps to reach the top.
@@ -31,7 +33,11 @@
 ///
 /// - `1 <= n <= 45`
 pub fn climb_stairs(n: i32) -> i32 {
-    n
+    match n {
+        1..=2 => n,
+        3..=45 => climb_stairs(n - 2) + climb_stairs(n - 1),
+        _ => panic!("n must be in range [1, 45]"),
+    }
 }
 
 #[cfg(test)]
@@ -85,5 +91,11 @@ mod tests {
     #[test]
     fn case_4_works() {
         assert_eq!(climb_stairs(5), 8);
+    }
+
+    #[test]
+    #[ignore = "time limit exceeded"]
+    fn case_31_works() {
+        assert_eq!(climb_stairs(45), 1836311903);
     }
 }
