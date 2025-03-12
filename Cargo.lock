@@ -5,3 +5,7 @@ version = 4
 [[package]]
 name = "climbing_stairs"
 version = "0.1.0"
+
+[[package]]
+name = "sum_of_the_digits_of_harshad_number"
+version = "0.1.0"

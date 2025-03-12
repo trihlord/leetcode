@@ -1,0 +1,6 @@
+[package]
+name = "sum_of_the_digits_of_harshad_number"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
