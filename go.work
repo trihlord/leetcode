@@ -1,3 +1,6 @@
 go 1.24.1
 
-use ./letter_case_permutation
+use (
+	./letter_case_permutation
+	./ways_to_split
+)
