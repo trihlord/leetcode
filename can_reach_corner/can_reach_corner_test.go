@@ -12,7 +12,14 @@ func TestCanReachCorner(t *testing.T) {
 		yCorner int
 		circles [][]int
 		output  bool
-	}{}
+	}{
+		"example 1": {
+			xCorner: 3,
+			yCorner: 4,
+			circles: [][]int{{2, 1, 1}},
+			output:  true,
+		},
+	}
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
