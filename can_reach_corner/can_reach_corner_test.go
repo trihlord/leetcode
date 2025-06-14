@@ -19,6 +19,24 @@ func TestCanReachCorner(t *testing.T) {
 			circles: [][]int{{2, 1, 1}},
 			output:  true,
 		},
+		"example 2": {
+			xCorner: 3,
+			yCorner: 3,
+			circles: [][]int{{1, 1, 2}},
+			output:  false,
+		},
+		"example 3": {
+			xCorner: 3,
+			yCorner: 3,
+			circles: [][]int{{2, 1, 1}, {1, 2, 1}},
+			output:  false,
+		},
+		"example 4": {
+			xCorner: 4,
+			yCorner: 4,
+			circles: [][]int{{5, 5, 1}},
+			output:  false,
+		},
 	}
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
