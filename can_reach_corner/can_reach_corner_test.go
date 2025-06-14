@@ -42,7 +42,7 @@ func TestCanReachCorner(t *testing.T) {
 		t.Run(name, func(t *testing.T) {
 			t.Parallel()
 			if expected, actual := test.output, can_reach_corner.CanReachCorner(test.xCorner, test.yCorner, test.circles); expected != actual {
-				t.Errorf("wand %t, got %t", expected, actual)
+				t.Errorf("want %t, got %t", expected, actual)
 			}
 		})
 	}
