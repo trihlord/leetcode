@@ -6,10 +6,11 @@
 
   See `can_reach_corner/README.md`.
 
-* \[ ] migrate table tests from structs to maps
+* \[ ] migrate table tests to structs
 
   ```go
-  tests := map[string]struct {
+  tests := []struct {
+    name   string
     input  int
     output int
   }
@@ -23,4 +24,14 @@
     // declare tests
     // run tests
   }
+  ```
+
+* \[ ] move go modules to main
+
+  ```shell
+  problem_solution_module
+  ├── main.go
+  ├── main_test.go
+  ├── go.mod
+  └── README.md
   ```

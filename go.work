@@ -1,6 +1,7 @@
-go 1.24.1
+go 1.24.5
 
 use (
+	./add_two_numbers
 	./can_reach_corner
 	./letter_case_permutation
 	./ways_to_split
