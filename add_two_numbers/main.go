@@ -37,37 +37,23 @@ func NewListNode(vals ...int) *ListNode {
 }
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	c1, c2 := l1, l2
-	s := c1.Val + c2.Val
-	v := s
-	if v > 9 {
-		v %= 10
-	}
-	h := &ListNode{Val: v, Next: nil}
+	h := new(ListNode)
 	c := h
-	s /= 10
-	for c1.Next != nil || c2.Next != nil {
-		c1, c2 = c1.Next, c2.Next
-		if c1 == nil {
-			c1 = new(ListNode)
+	s := 0
+	for l1 != nil || l2 != nil || s > 0 {
+		var v1, v2 int
+		if l1 != nil {
+			v1 = l1.Val
+			l1 = l1.Next
 		}
-		if c2 == nil {
-			c2 = new(ListNode)
+		if l2 != nil {
+			v2 = l2.Val
+			l2 = l2.Next
 		}
-		s += c1.Val + c2.Val
-		v := s
-		if v > 9 {
-			v %= 10
-		}
-		t := &ListNode{Val: v, Next: nil}
-		c.Next = t
-		c = t
-		s /= 10
+		v := s + v1 + v2
+		s = v / 10
+		c.Next = &ListNode{Val: v % 10, Next: nil}
+		c = c.Next
 	}
-	if s > 0 {
-		t := &ListNode{Val: s, Next: nil}
-		c.Next = t
-		c = t
-	}
-	return h
+	return h.Next
 }
