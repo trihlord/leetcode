@@ -1,7 +1,7 @@
 package maxuniqesplit
 
 func MaxUniqeSplit(s string) int {
-	ss := make(map[string]struct{})
+	ss := make(map[string]struct{}, len(s))
 	return backtrace(s, ss)
 }
 
