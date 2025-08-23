@@ -6,13 +6,21 @@
 
   See `can_reach_corner/README.md`.
 
+  ```md
+  # Issue no. with title
+
+  Link to issue description.
+
+  Summary.
+  ```
+
 * \[ ] migrate table tests to structs
 
   ```go
   tests := []struct {
-    name   string
-    input  int
-    output int
+    name string
+    in   int
+    out  int
   }
   ```
 
@@ -20,9 +28,10 @@
 
   ```go
   func TestMe(t *testing.T) {
-    t.Parallel()
-    // declare tests
-    // run tests
+    t.Run("Exmaple", func (t *testing.T) {
+      t.Parallel()
+      // Impl details
+    })
   }
   ```
 
@@ -34,4 +43,16 @@
   ├── main_test.go
   ├── go.mod
   └── README.md
+  ```
+
+* \[ ] rm `test` from `*_test.go` package
+
+  ```go
+  package mysolution
+
+  import "testing"
+
+  func TestMySolution () {
+    // Impl details
+  }
   ```
