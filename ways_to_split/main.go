@@ -1,4 +1,4 @@
-package ways_to_split
+package waystosplit
 
 func WaysToSplit(nums []int) int {
 	count := 0

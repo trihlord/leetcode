@@ -1,24 +1,21 @@
-package first_palindrome_test
+package firstpalindrome
 
-import (
-	"leetcode/first_palindrome"
-	"testing"
-)
+import "testing"
 
 func TestFirstPalindrome(t *testing.T) {
 	tests := []struct {
-		name   string
-		input  []string
-		output string
+		name string
+		in   []string
+		out  string
 	}{
-		{name: "Example 1", input: []string{"abc", "car", "ada", "racecar", "cool"}, output: "ada"},
-		{name: "Example 2", input: []string{"notapalindrome", "racecar"}, output: "racecar"},
-		{name: "Example 3", input: []string{"def", "ghi"}, output: ""},
+		{name: "Example 1", in: []string{"abc", "car", "ada", "racecar", "cool"}, out: "ada"},
+		{name: "Example 2", in: []string{"notapalindrome", "racecar"}, out: "racecar"},
+		{name: "Example 3", in: []string{"def", "ghi"}, out: ""},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			t.Parallel()
-			if got, want := test.output, first_palindrome.FirstPalindrome(test.input); got != want {
+			if got, want := test.out, FirstPalindrome(test.in); got != want {
 				t.Errorf("got %q, want %q", got, want)
 			}
 		})

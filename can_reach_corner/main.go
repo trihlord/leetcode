@@ -1,4 +1,4 @@
-package can_reach_corner
+package canreachcorner
 
 func CanReachCorner(xCorner int, yCorner int, circles [][]int) bool {
 	return false

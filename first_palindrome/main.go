@@ -1,4 +1,4 @@
-package first_palindrome
+package firstpalindrome
 
 func FirstPalindrome(words []string) string {
 	for _, word := range words {
